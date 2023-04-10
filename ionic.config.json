@@ -1,0 +1,8 @@
+{
+  "name": "Comfort",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "f2be0c6b"
+}

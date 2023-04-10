@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Comfort",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
