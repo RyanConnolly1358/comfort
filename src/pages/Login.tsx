@@ -8,7 +8,7 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState('')
 
   function login(){
-    console.log(username)
+    console.log(username, password)
   }
 
     return (
@@ -17,7 +17,7 @@ const Login: React.FC = () => {
         <IonContent className="ion-padding">
             <IonInput placeholder="Username" onIonChange={(e:any) => setUsername(e.target.value)}/>
             <IonInput placeholder="Password"  onIonChange={(e:any) => setPassword(e.target.value)}/>
-            <IonButton>Login</IonButton>
+            <IonButton onClick={login}>Login</IonButton>
             <IonButton routerLink="/register" color="secondary">Register</IonButton>
         </IonContent>
 
