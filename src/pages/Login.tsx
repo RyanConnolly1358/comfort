@@ -7,25 +7,17 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const refresh = (e: CustomEvent) => {
-      setTimeout(() => {
-        e.detail.complete();
-      }, 3000);
-    };
-
-    function login(){
-      console.log(username, password)
-    }
+  function login(){
+    console.log(username)
+  }
 
     return (
     <IonPage>
 
-        
-
         <IonContent className="ion-padding">
             <IonInput placeholder="Username" onIonChange={(e:any) => setUsername(e.target.value)}/>
             <IonInput placeholder="Password"  onIonChange={(e:any) => setPassword(e.target.value)}/>
-            <IonButton onClick={login}>Login</IonButton>
+            <IonButton>Login</IonButton>
             <IonButton routerLink="/register" color="secondary">Register</IonButton>
         </IonContent>
 
