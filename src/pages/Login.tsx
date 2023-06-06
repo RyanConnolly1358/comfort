@@ -24,7 +24,7 @@ const Login: React.FC = () => {
 
     api.post("/workflows/c2d9608d2cee4157a92de75ad70733ec/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7AoQpjXHRewmc0u4P2C0N-HBsUuDNJzYYsYel9lhuAY", loginReqBody)
     .then((res) => {
-      if(res.status == 200){
+      if(res.status === 200){
         history.push('/register');
         console.log("We did it!")
       }
