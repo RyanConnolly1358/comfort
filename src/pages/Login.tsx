@@ -42,16 +42,13 @@ const Login: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-            <div className="logo">
-            
-            </div>
             <div className="login">
                <IonImg src="assets/icon/logo.png" className="logo" />
                <IonLabel color={'danger'} className="title">Comfort</IonLabel>
                <IonInput placeholder="Username" className="input" onIonChange={(e:any) => setUsername(e.target.value)}/>
                <IonInput placeholder="Password"  className="input" onIonChange={(e:any) => setPassword(e.target.value)}/>
-               <IonButton onClick={login}>Login</IonButton>
-               <IonButton routerLink="/register" color="secondary">Register</IonButton>
+               <IonButton onClick={login} color="primary" className="loginBtn">Login</IonButton>
+               <IonButton routerLink="/register" color="secondary" className="loginBtn">Register</IonButton>
             </div>
             
         </IonContent>
