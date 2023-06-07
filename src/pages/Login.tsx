@@ -1,7 +1,8 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonContent, IonHeader, IonImg, IonInput, IonLabel, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useState } from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import './Login.css';
 
 const Login: React.FC = () => {
   
@@ -41,10 +42,18 @@ const Login: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-            <IonInput placeholder="Username" onIonChange={(e:any) => setUsername(e.target.value)}/>
-            <IonInput placeholder="Password"  onIonChange={(e:any) => setPassword(e.target.value)}/>
-            <IonButton onClick={login}>Login</IonButton>
-            <IonButton routerLink="/register" color="secondary">Register</IonButton>
+            <div className="logo">
+            
+            </div>
+            <div className="login">
+               <IonImg src="assets/icon/logo.png" className="logo" />
+               <IonLabel color={'danger'} className="title">Comfort</IonLabel>
+               <IonInput placeholder="Username" className="input" onIonChange={(e:any) => setUsername(e.target.value)}/>
+               <IonInput placeholder="Password"  className="input" onIonChange={(e:any) => setPassword(e.target.value)}/>
+               <IonButton onClick={login}>Login</IonButton>
+               <IonButton routerLink="/register" color="secondary">Register</IonButton>
+            </div>
+            
         </IonContent>
 
     </IonPage>

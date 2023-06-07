@@ -1,0 +1,42 @@
+.login{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FBFBFB;
+    border-radius: 1%;
+    padding: 10% 10%;
+    box-shadow: 0px 0px 8px #888888;
+    text-align: left;
+    position: relative;
+  }
+
+
+.loginBtn{
+    color: FFB366;
+    width: 60%;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.input{
+    width: 100%;
+    border: 1px #030303 solid; 
+    color: gray;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin-bottom: 20px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    color: #030303;
+    padding: 10px;
+    font-size: 5.0vw;
+}
