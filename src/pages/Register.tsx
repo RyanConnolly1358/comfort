@@ -1,7 +1,9 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonLabel, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonInput, IonLabel, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useState } from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import {returnDownBack} from "ionicons/icons";
+import './Register.css';
 
 const Register: React.FC = () => {
 
@@ -45,17 +47,23 @@ const Register: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-            <div>
+            <div className="register">
                 <IonLabel>Enter your details below!</IonLabel>
                 
-                <IonInput placeholder="Username" onIonChange={(e:any) => setUsername(e.target.value)}/>
-                <IonInput placeholder="Email" onIonChange={(e:any) => setEmail(e.target.value)}/>
-                <IonInput placeholder="Password" onIonChange={(e:any) => setPassword(e.target.value)}/>
-                <IonInput placeholder="Confirm Password" onIonChange={(e:any) => setConfirmP(e.target.value)}/>
+                <IonInput labelPlacement="stacked" label="Enter Username:" placeholder="Patrick123" onIonChange={(e:any) => setUsername(e.target.value)}/>
+                <IonInput labelPlacement="stacked" label="Enter Email:" placeholder="patrick@gmail.com" onIonChange={(e:any) => setEmail(e.target.value)}/>
+                <IonInput labelPlacement="stacked" label="Enter Password:" type="password" value="password" onIonChange={(e:any) => setPassword(e.target.value)}/>
+                <IonInput labelPlacement="stacked" label="Confirm Password:" type="password" value="password" onIonChange={(e:any) => setConfirmP(e.target.value)}/>
 
-                <IonLabel>**You admin account details will be emailed to you upon creation</IonLabel>
-                <IonButton onClick={register}>Register!</IonButton>
-            </div>
+                <IonButton onClick={register} color={"secondary"} expand="block">Register!</IonButton>
+               </div>
+
+            
+                  <IonFab horizontal="start" vertical="bottom">
+                    <IonFabButton routerLink="/login">
+                        <IonIcon icon={returnDownBack}></IonIcon>
+                    </IonFabButton>
+                </IonFab>
             
         </IonContent>
 

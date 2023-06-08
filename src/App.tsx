@@ -4,6 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Hub from './pages/Hub';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -46,6 +47,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/message/:id">
            <ViewMessage />
+        </Route>
+        <Route path="/hub" exact={true}>
+          <Hub />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
