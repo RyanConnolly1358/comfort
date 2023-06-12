@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Hub from './pages/Hub';
+import TextToSpeech from './pages/TextToSpeech';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -44,6 +45,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/register" exact={true}>
           <Register />
+        </Route>
+        <Route path="/speak">
+           <TextToSpeech />
         </Route>
         <Route path="/message/:id">
            <ViewMessage />

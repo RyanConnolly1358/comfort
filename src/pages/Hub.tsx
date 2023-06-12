@@ -30,7 +30,7 @@ import {
             <IonImg src="assets/icon/logo.png" className="logo" />
             <IonButton disabled={true} expand="block" size="large">Daily Mood Check</IonButton>
             <IonButton expand="block" size="large">Email Carer</IonButton>
-            <IonButton expand="block" size="large">Text to Speech</IonButton>
+            <IonButton expand="block" size="large" routerLink='/speak'>Text to Speech</IonButton>
             <IonButton expand="block" size="large" color="danger">Emergency Alert</IonButton>
 
             <IonFab >
