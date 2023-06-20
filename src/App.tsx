@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Hub from './pages/Hub';
 import TextToSpeech from './pages/TextToSpeech';
+import EmailCarer from './pages/EmailCarer';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -54,6 +55,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/hub" exact={true}>
           <Hub />
+        </Route>
+        <Route path="/email" exact={true}>
+          <EmailCarer />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
