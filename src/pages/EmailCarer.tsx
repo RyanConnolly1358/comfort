@@ -18,6 +18,8 @@ import { EmailClient } from '@azure/communication-email';
 
   async function sendEmail() {
         console.log(emailContent);
+        console.log(localStorage.carerEmail);
+        console.log(localStorage.username);
 
         const emailClient = new EmailClient("endpoint=https://comfort-cs.communication.azure.com/;accesskey=EphTq7kRcWR9f4ItaLdO+ObYxCDmq+hIfPE6jkjAE/xHQ/l0n1ZLVi1RUWW9gjXu1RQQ+ikXlYJPNKNJwgtYew==")
 
@@ -25,14 +27,14 @@ import { EmailClient } from '@azure/communication-email';
           const message = {
             senderAddress: "ComfortAlert@6eaa7b45-a9e8-4bc9-a639-3c4878630394.azurecomm.net",
             content: {
-              subject: "Ryan has sent you a message!",
+              subject: localStorage.username + " has sent you a message!",
               plainText: emailContent,
             },
             recipients: {
               to: [
                 {
-                  address: "ryanconnolly1358@hotmail.co.uk",
-                  displayName: "Patient Name",
+                  address: localStorage.carerEmail,
+                  displayName: "Carer Name",
                 },
               ],
             },

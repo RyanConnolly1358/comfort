@@ -11,6 +11,7 @@ const Register: React.FC = () => {
     const [password, setPassword] = useState('')
     const [confirmP, setConfirmP] = useState('')
     const [email, setEmail] = useState('')
+    const [carerEmail, setCarerEmail] = useState('')
 
     let history = useHistory();
 
@@ -20,7 +21,8 @@ const Register: React.FC = () => {
         const registerReqBody = {
             "username":username,
             "password":password,
-            "email":email
+            "email":email,
+            "carerEmail":carerEmail
           }
       
 
@@ -54,6 +56,7 @@ const Register: React.FC = () => {
                 <IonInput labelPlacement="stacked" label="Enter Email:" placeholder="patrick@gmail.com" onIonChange={(e:any) => setEmail(e.target.value)}/>
                 <IonInput labelPlacement="stacked" label="Enter Password:" type="password" value="password" onIonChange={(e:any) => setPassword(e.target.value)}/>
                 <IonInput labelPlacement="stacked" label="Confirm Password:" type="password" value="password" onIonChange={(e:any) => setConfirmP(e.target.value)}/>
+                <IonInput labelPlacement="stacked" label="Carer Email:" placeholder="carer@gmail.com" onIonChange={(e:any) => setCarerEmail(e.target.value)}/>
 
                 <IonButton onClick={register} color={"secondary"} expand="block">Register!</IonButton>
                </div>
