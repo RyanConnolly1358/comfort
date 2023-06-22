@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Hub from './pages/Hub';
 import TextToSpeech from './pages/TextToSpeech';
 import EmailCarer from './pages/EmailCarer';
+import DailyMood from './pages/DailyMood';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -58,6 +59,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/email" exact={true}>
           <EmailCarer />
+        </Route>
+        <Route path="/mood" exact={true}>
+          <DailyMood />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

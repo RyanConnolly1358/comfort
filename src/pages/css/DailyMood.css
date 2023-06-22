@@ -1,0 +1,16 @@
+.login{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    background-color: #FBFBFB;
+    border-radius: 1%;
+    padding: 10% 10%;
+    box-shadow: 0px 0px 8px #888888;
+    text-align: left;
+    position: relative;
+}
+
+.image{
+    height: 20%;
+    padding: 10% 10%;
+}
