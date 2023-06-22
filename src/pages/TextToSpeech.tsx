@@ -12,6 +12,7 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import {returnDownBack} from "ionicons/icons";
+import './css/TextToSpeech.css';
 
 const TextToSpeech: React.FC = () => {
   const [textToBeConverted, setTextToBeConverted] = useState("");
@@ -29,21 +30,25 @@ const TextToSpeech: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>This is a test!</IonTitle>
+          <IonTitle>Speak!</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-        <IonInput
+        <div className="main">
+          <IonInput
+          className="input"
           placeholder="Enter Text"
           onIonChange={(e: any) => setTextToBeConverted(e.target.value)}
-        />
-        <IonButton onClick={convertTextToSpeech} color="primary">
-          Speak!
-        </IonButton>
+          />
+          <IonButton onClick={convertTextToSpeech} color="primary">
+            Speak!
+          </IonButton>
+          
+        </div>
         <IonFab horizontal="start" vertical="bottom">
-                    <IonFabButton routerLink="/hub">
-                        <IonIcon icon={returnDownBack}></IonIcon>
+              <IonFabButton routerLink="/hub">
+              <IonIcon icon={returnDownBack}></IonIcon>
           </IonFabButton>
           </IonFab>
       </IonContent>

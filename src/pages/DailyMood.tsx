@@ -44,13 +44,13 @@ import axios from 'axios';
   
         <IonToolbar>
           <IonTitle>
-            This is a test!
+            Daily Mood Check!
           </IonTitle>
         </IonToolbar>
   
         </IonHeader>
         <IonContent>
-            <div className="login">
+            <div className="main">
                 <IonImg src="assets/icon/mood5.png" className="image" onClick={() => submitMood("5")} />
                 <IonImg src="assets/icon/mood4.png" className="image" onClick={() => submitMood("4")}/>
                 <IonImg src="assets/icon/mood3.png" className="image" onClick={() => submitMood("3")}/>

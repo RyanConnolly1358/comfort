@@ -13,6 +13,7 @@ import {
 import { useState } from 'react';
 import { EmailClient } from '@azure/communication-email';
 import {returnDownBack} from "ionicons/icons";
+import './css/EmailCarer.css';
   
   const EmailCarer: React.FC = () => {
 
@@ -56,18 +57,22 @@ import {returnDownBack} from "ionicons/icons";
         <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>This is a test!</IonTitle>
+            <IonTitle>Email your carer!</IonTitle>
           </IonToolbar>
         </IonHeader>
   
         <IonContent>
-          <IonInput
+          <div className='main'>
+            <IonInput
+            className='input'
             placeholder="Enter Text"
             onIonChange={(e: any) => setEmail(e.target.value)}
           />
           <IonButton onClick={sendEmail} color="primary">
             Send Email!
           </IonButton>
+          </div>
+          
           <IonFab horizontal="start" vertical="bottom">
                     <IonFabButton routerLink="/hub">
                         <IonIcon icon={returnDownBack}></IonIcon>

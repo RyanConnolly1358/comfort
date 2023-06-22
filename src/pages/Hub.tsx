@@ -41,7 +41,7 @@ import axios from 'axios';
   
         <IonToolbar>
           <IonTitle>
-            This is a test!
+            Comfort
           </IonTitle>
         </IonToolbar>
   

@@ -10,7 +10,12 @@
     position: relative;
 }
 
-.image{
-    height: 20%;
-    padding: 10% 10%;
+.input{
+    width: 100%;
+    border: 1px #030303 solid; 
+    color: gray;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin-bottom: 20px;
 }
