@@ -11,9 +11,30 @@ import {
     IonTitle,
     IonToolbar,
   } from '@ionic/react';
+import axios from 'axios';
   import {chevronForward, logOut, lockClosed} from "ionicons/icons";
   
   const Hub: React.FC = () => {
+
+    async function sendEmergencyAlert() {
+
+      const loginReqBody = {
+        "userID":localStorage.userID,
+      }
+  
+      const api = axios.create({
+        baseURL: `https://prod-161.westeurope.logic.azure.com:443`,
+      });
+      api.post("/workflows/a015a82b71c747ed8d13d90cb5db36df/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=QKTtDbSAsoGgKQvJylX1uwn2MqEhzYsYbNSbUphNxUA", loginReqBody)
+      .then((res) => {
+        if(res.status === 200){
+          console.log("Emergency Alert worked")
+          
+
+      }
+    })
+  }
+
     return (
       <IonPage>
         <IonHeader>
@@ -31,7 +52,7 @@ import {
             <IonButton disabled={true} expand="block" size="large">Daily Mood Check</IonButton>
             <IonButton expand="block" size="large" routerLink="/email">Email Carer</IonButton>
             <IonButton expand="block" size="large" routerLink='/speak'>Text to Speech</IonButton>
-            <IonButton expand="block" size="large" color="danger">Emergency Alert</IonButton>
+            <IonButton expand="block" size="large" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
 
             <IonFab >
               <IonFabButton>
@@ -52,5 +73,6 @@ import {
       </IonPage>
     );
   };
-  
+
+
   export default Hub;

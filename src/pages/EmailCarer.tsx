@@ -1,7 +1,10 @@
 import {
     IonButton,
     IonContent,
+    IonFab,
+    IonFabButton,
     IonHeader,
+    IonIcon,
     IonInput,
     IonPage,
     IonTitle,
@@ -9,6 +12,7 @@ import {
   } from '@ionic/react';
 import { useState } from 'react';
 import { EmailClient } from '@azure/communication-email';
+import {returnDownBack} from "ionicons/icons";
   
   const EmailCarer: React.FC = () => {
 
@@ -64,6 +68,11 @@ import { EmailClient } from '@azure/communication-email';
           <IonButton onClick={sendEmail} color="primary">
             Send Email!
           </IonButton>
+          <IonFab horizontal="start" vertical="bottom">
+                    <IonFabButton routerLink="/hub">
+                        <IonIcon icon={returnDownBack}></IonIcon>
+          </IonFabButton>
+          </IonFab>
         </IonContent>
       </IonPage>
     );

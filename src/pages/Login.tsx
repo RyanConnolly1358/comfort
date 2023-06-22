@@ -29,6 +29,7 @@ const Login: React.FC = () => {
         localStorage.carerEmail = res.data[0]["carerEmail"];
         localStorage.username = res.data[0]["username"];
         localStorage.admin = res.data[0]["admin"];
+        localStorage.userID = res.data[0]["id"];
 
        // console.log(res.data[0]["carerEmail"]);
        // console.log(localStorage.carerEmail);
