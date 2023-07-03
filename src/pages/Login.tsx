@@ -26,15 +26,26 @@ const Login: React.FC = () => {
     api.post("/workflows/c2d9608d2cee4157a92de75ad70733ec/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7AoQpjXHRewmc0u4P2C0N-HBsUuDNJzYYsYel9lhuAY", loginReqBody)
     .then((res) => {
       if(res.status === 200){
-        localStorage.carerEmail = res.data[0]["carerEmail"];
+        
         localStorage.username = res.data[0]["username"];
         localStorage.admin = res.data[0]["admin"];
         localStorage.userID = res.data[0]["id"];
 
+        console.log(res.data[0]["admin"])
+
+        if(res.data[0]["admin"] === 0){
+          localStorage.carerEmail = res.data[0]["carerEmail"];
+          history.push('/hub');
+          console.log("Welcome User!");
+        }else if(res.data[0]["admin"] === 1){
+          localStorage.patientID = res.data[0]["patientID"];
+          history.push('/admin');
+          console.log("Welcome Admin!");
+        }
+
        // console.log(res.data[0]["carerEmail"]);
        // console.log(localStorage.carerEmail);
-        history.push('/hub');
-        console.log("We did it!");
+        
         
       }
       

@@ -8,6 +8,10 @@ import Hub from './pages/Hub';
 import TextToSpeech from './pages/TextToSpeech';
 import EmailCarer from './pages/EmailCarer';
 import DailyMood from './pages/DailyMood';
+import AdminHub from './pages/AdminHub';
+import AdminEditCarer from './pages/AdminEditCarer';
+import AdminUpdatePrimaryCarer from './pages/AdminUpdatePrimaryCarer';
+import AdminEditEmergencyContacts from './pages/AdminEditEmergencyContacts';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -29,6 +33,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
 
 setupIonicReact();
 
@@ -62,6 +67,18 @@ const App: React.FC = () => (
         </Route>
         <Route path="/mood" exact={true}>
           <DailyMood />
+        </Route>
+        <Route path="/admin" exact={true}>
+          <AdminHub />
+        </Route>
+        <Route path="/editCarer" exact={true}>
+          <AdminEditCarer />
+        </Route>
+        <Route path="/updatePrimaryCarer" exact={true}>
+          <AdminUpdatePrimaryCarer />
+        </Route>
+        <Route path="/editEmergencyContacts" exact={true}>
+          <AdminEditEmergencyContacts />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

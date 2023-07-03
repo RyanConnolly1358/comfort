@@ -41,7 +41,7 @@ import axios from 'axios';
   
         <IonToolbar>
           <IonTitle>
-            Comfort
+            Comfort - Welcome user!
           </IonTitle>
         </IonToolbar>
   
@@ -54,7 +54,7 @@ import axios from 'axios';
             <IonButton expand="block" size="large" routerLink='/speak'>Text to Speech</IonButton>
             <IonButton expand="block" size="large" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
 
-            <IonFab >
+            <IonFab horizontal="start" vertical="bottom">
               <IonFabButton>
                 <IonIcon icon={chevronForward}></IonIcon>
               </IonFabButton>
