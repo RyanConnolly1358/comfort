@@ -9,22 +9,18 @@ import {
   } from '@ionic/react';
 import axios from 'axios';
 //import { get } from 'http';
-//import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
   
 const AdminEditCarer: React.FC = () => {
 
+    interface Carer {
+        carerEmail: string;
+        id: string;
+    }
     
-   // const [carer, setCarer] = useState('');
-  
+   const [carers, setCarer] = useState<Carer[]>([]);
 
-    // function carerUpdate(){
-    //     console.log(carer);
-    // }
-
-    function getCarers():string[]{
-        
-        //var dataList:string[];
-        var dataList = ['test'];
+    async function getCarers(){
 
         const carerReadReqBody = {
             "patientID":"b7da67d2-ea0a-4e80-93e3-24a6a217679b",
@@ -37,27 +33,23 @@ const AdminEditCarer: React.FC = () => {
         try{
             api.post("/workflows/77277e0910f14f83af1fa927761739b8/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=K1XhV6eZ3iRxmZPkJ2Xpj6baLyK5r7CSm-9_LdBgzxo", carerReadReqBody)
           .then((res) => {
+        
+            console.log(res.data)
 
-            res.data.forEach((element: any) => {
-                 dataList.push(element["carerEmail"])
-            });
+            setCarer(res.data);
+
+            console.log(carers);
 
           })
-
-          console.log(dataList);
-          return dataList;
-
         } catch(e){
             throw e;
         }
-        
     }
 
-    // useEffect(()=>{
-
-       
-
-    // }, [])
+    useEffect(()=>{
+       getCarers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
   
     return (
       <IonPage id="home-page">
@@ -68,25 +60,18 @@ const AdminEditCarer: React.FC = () => {
             This is a test!
           </IonTitle>
         </IonToolbar>
-  
         </IonHeader>
         <IonContent>
-
         <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline">
                 {
-
-                    getCarers().map((carer) => (
-                        <IonSelectOption>{carer}</IonSelectOption>
-                    ))
+                    carers.map(carer =>
+                        <IonSelectOption value={carer["id"]}>{carer["carerEmail"]}</IonSelectOption>
+                    )
+                    // carers().carerEmail.map()
+                    //     <IonSelectOption>{test}</IonSelectOption>
+                    // ))
                 }
         </IonSelect>
-                
-                
-            
-      {/* <IonButton onClick={carerUpdate}>
-        Test
-      </IonButton> */}
-
         </IonContent>
       </IonPage>
       
