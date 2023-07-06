@@ -16,7 +16,6 @@ import {
 import axios from 'axios';
 import { returnDownBack } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
   
 const AdminEditCarer: React.FC = () => {
 
