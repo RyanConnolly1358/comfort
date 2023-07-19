@@ -29,7 +29,7 @@ import {
 
         <IonContent>
             <IonImg src="assets/icon/logo.png" className="logo" />
-            <IonButton expand="block" size="large" routerLink="/mood">Mood Report</IonButton>
+            <IonButton expand="block" size="large" routerLink="/viewMoodReport">Mood Report</IonButton>
             <IonButton expand="block" size="large" routerLink="/editCarer">Edit Carers</IonButton>
             <IonButton expand="block" size="large" routerLink='/updatePrimaryCarer'>Update Primary Carer</IonButton>
             <IonButton expand="block" size="large" routerLink='/editEmergencyContacts'>Edit Emergency Contacts</IonButton>

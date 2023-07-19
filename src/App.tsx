@@ -12,6 +12,7 @@ import AdminHub from './pages/AdminHub';
 import AdminEditCarer from './pages/AdminEditCarer';
 import AdminUpdatePrimaryCarer from './pages/AdminUpdatePrimaryCarer';
 import AdminEditEmergencyContacts from './pages/AdminEditEmergencyContacts';
+import DailyMoodReport from './pages/DailyMoodReport';
 
 import ViewMessage from './pages/ViewMessage';
 
@@ -79,6 +80,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/editEmergencyContacts" exact={true}>
           <AdminEditEmergencyContacts />
+        </Route>
+        <Route path="/viewMoodReport" exact={true}>
+          <DailyMoodReport/>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
