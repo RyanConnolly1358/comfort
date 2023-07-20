@@ -1,7 +1,10 @@
 import {
   IonButton,
   IonContent,
+    IonFab,
+    IonFabButton,
     IonHeader,
+    IonIcon,
     IonLabel,
     IonPage,
     IonSelect,
@@ -10,7 +13,9 @@ import {
     IonToolbar,
   } from '@ionic/react';
 import axios from 'axios';
+import { returnDownBack } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
+import './css/global.css';
   
   const AdminEditEmergencyContacts: React.FC = () => {
 
@@ -135,23 +140,35 @@ import { useEffect, useState } from 'react';
           </IonToolbar>
 
         </IonHeader>
-        <IonContent>
+        <IonContent> 
 
-          <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
+        <div className='main'>
+          <div className='input'>
+            <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
                  {
                   //List Current Carers
                      carers.map(carer =>
                          <IonSelectOption value={carer["carerEmail"]}>{carer["carerEmail"]}</IonSelectOption>
                      )
                  }
-          </IonSelect>
-          <IonButton expand="block" onClick={addEmergencyContact} >Add Carer to Emergency Contacts</IonButton>
-          <IonButton expand="block" onClick={removeEmergencyContact} >Remove Emergency Contact</IonButton>
-          <IonLabel>Emergency Contacts: </IonLabel>
+            </IonSelect>
+          </div>
+        
+          <IonButton expand="block" color={"secondary"} onClick={addEmergencyContact} >Add Carer to EC</IonButton>
+          <IonButton expand="block" color={"danger"} onClick={removeEmergencyContact} >Remove Emergency Contact</IonButton>
+          <IonLabel className='text'>Emergency Contacts: </IonLabel>
                  {emergencyContacts.map( emergencyContact =>
-                    <IonLabel>{emergencyContact["email"]}</IonLabel>
+                    <IonLabel className='text'>{emergencyContact["email"]}</IonLabel>
                  )}
-           {/* <IonLabel>Current Primary : {currentCarer[0]["carerEmail"]}</IonLabel> */}
+        </div>
+          
+           
+
+           <IonFab horizontal="start" vertical="bottom">
+              <IonFabButton routerLink="/admin">
+              <IonIcon icon={returnDownBack}></IonIcon>
+          </IonFabButton>
+          </IonFab>
          </IonContent>
       </IonPage>
     );

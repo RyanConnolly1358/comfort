@@ -1,7 +1,10 @@
 import {
   IonButton,
   IonContent,
+    IonFab,
+    IonFabButton,
     IonHeader,
+    IonIcon,
     IonPage,
     IonSelect,
     IonSelectOption,
@@ -9,7 +12,9 @@ import {
     IonToolbar,
   } from '@ionic/react';
 import axios from 'axios';
-  import { useEffect, useState } from 'react';
+import { returnDownBack } from 'ionicons/icons';
+import { useEffect, useState } from 'react';
+import './css/global.css';
   
   const AdminUpdatePrimaryCarer: React.FC = () => {
 
@@ -65,6 +70,7 @@ import axios from 'axios';
   
           }).then((res) => {
             setCurrentCarer(res.data);
+            console.log(res.data[0]["carerEmail"])
           })
         } catch(e){
             throw e;
@@ -108,22 +114,36 @@ import axios from 'axios';
   
         <IonToolbar>
           <IonTitle>
+            Update Primary Carer
           </IonTitle>
         </IonToolbar>
   
         </IonHeader>
         <IonContent>
-        
-        <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
+        <div className='main'>
+          <div className='input'>
+          <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
                 {
                     carers.map(carer =>
                         <IonSelectOption value={carer["id"]}>{carer["carerEmail"]}</IonSelectOption>
                     )
                 }
-        </IonSelect>
-        <IonButton expand="block" onClick={updatePrimaryCarer}>Update Primary Carer</IonButton>
+          </IonSelect>
+          </div>
+        
+        <IonButton expand="block" onClick={updatePrimaryCarer} color="secondary">Update Primary Carer</IonButton>
 
-          {/* <IonLabel>Current Primary : {currentCarer[0]["carerEmail"]}</IonLabel> */}
+        {/* <IonLabel className='text'>Current Primary : {currentCarer[0]["carerEmail"]}</IonLabel> */}
+
+
+        </div>
+
+        <IonFab horizontal="start" vertical="bottom">
+          <IonFabButton routerLink="/admin">
+            <IonIcon icon={returnDownBack}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+        
         </IonContent>
       </IonPage>
       

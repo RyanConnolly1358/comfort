@@ -1,8 +1,10 @@
 import {
     IonContent,
+    IonFab,
+    IonFabButton,
     IonHeader,
+    IonIcon,
     IonItem,
-    IonLabel,
     IonList,
     IonPage,
     IonTitle,
@@ -13,19 +15,23 @@ import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js'; 
 import Chart from 'chart.js/auto'; 
+import './css/DailyMoodReport.css';
+import { returnDownBack } from 'ionicons/icons';
 
   
   const DailyMoodReport: React.FC = () => {
 
     Chart.register(CategoryScale)
 
-    interface Mood {
-        moodRating: string;
-        _ts: number;
+    const options = {
+      maintainAspectRatio: false, 
+      responsive: true,
+      x: {
+        type: 'timeseries'
+      }
+      
     }
 
-   // const [moods, setMoods] = useState<Mood[]>([]);
-    const [moods, setMoods] = useState<Mood[]>([]);
     let [pastMoods, setPastMoods] = useState('');
     let test = new Date();
 
@@ -33,12 +39,13 @@ import Chart from 'chart.js/auto';
         labels:[test.getDate()-6,test.getDate()-5,test.getDate()-4,test.getDate()-3,test.getDate()-2,test.getDate()-1,test.getDate(),test.getDate()],
         datasets: [
             {
-              label: 'Past 7 Day Mood Report',
+              label: 'Mood Report',
               backgroundColor: 'rgba(255,99,132,0.2)',
               borderColor: 'rgba(255,99,132,1)',
-              borderWidth: 1,
+              borderWidth: 2,
               hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               hoverBorderColor: 'rgba(255,99,132,1)',
+              showLine: true,
               data: [pastMoods[6],pastMoods[5],pastMoods[4],pastMoods[3],pastMoods[2],pastMoods[1],pastMoods[0]]
             }
           ]
@@ -70,8 +77,9 @@ import Chart from 'chart.js/auto';
                   past7Days.push(getDate(i))
                 }
                 
-                const date: Date = new Date(res.data[0]["_ts"] * 1000);
+                const date: Date = new Date(test["_ts"] * 1000);
                 let t = date.toLocaleDateString();
+                console.log(t);
 
                 switch(t){
                     case past7Days[0].toLocaleDateString(): { pastMoods[0] = test["moodRating"]; break;}
@@ -87,7 +95,7 @@ import Chart from 'chart.js/auto';
                 
             )
             
-            setMoods(res.data);
+            //console.log(pastMoods.toString());
             setPastMoods(pastMoods.toString());
             
           })
@@ -124,26 +132,27 @@ import Chart from 'chart.js/auto';
   
         </IonHeader>
         <IonContent>
-        
-        <IonList>
-
-          <IonItem>
-            <div>
+          <div className='main'>
+          
+            <IonList max-height = "500px">
+            
+            <IonItem>
               
-            </div>
-            
-            <Line data={lineChartData}
-                options={{ maintainAspectRatio: true}}   />
+                <Line className='min'  data={lineChartData}
+                    options={options}   />
+              
+              
             </IonItem>
-        </IonList>
-            
-        {
-            moods.map( mood =>
-                <IonLabel>{mood["moodRating"]}</IonLabel>
-             )
-             
-        }
+           
+          </IonList>
+
+          </div>
         
+          <IonFab horizontal="start" vertical="bottom">
+              <IonFabButton routerLink="/admin">
+              <IonIcon icon={returnDownBack}></IonIcon>
+          </IonFabButton>
+          </IonFab>
 
         </IonContent>
       </IonPage>

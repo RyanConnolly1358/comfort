@@ -16,6 +16,8 @@ import {
 import axios from 'axios';
 import { returnDownBack } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
+import './css/AdminEditCarer.css';
+import './css/global.css';
   
 const AdminEditCarer: React.FC = () => {
 
@@ -115,33 +117,44 @@ const AdminEditCarer: React.FC = () => {
   
         <IonToolbar>
           <IonTitle>
-            This is a test!
+            Edit Carer
           </IonTitle>
         </IonToolbar>
         </IonHeader>
         <IonContent>
-        <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
-                {
-                    carers.map(carer =>
-                        <IonSelectOption value={carer["id"]}>{carer["carerEmail"]}</IonSelectOption>
-                    )
-                }
-        </IonSelect>
-        <IonButton id="open-modal" expand="block">Add Carer</IonButton>
-        <IonButton expand="block" onClick={deleteCarer} disabled={selectedCarer===''} >Delete Carer</IonButton>
-        <IonModal trigger="open-modal" initialBreakpoint={1} breakpoints={[0, 1]}>
-          <div>
-            <IonInput placeholder="Carer Email" fill='outline' className="input" onIonChange={(e:any) => setNewCarer(e.target.value)}/>
-            <IonButton onClick={createCarer}>Add!</IonButton>
-          </div>
-        </IonModal>
-        <IonFab horizontal="start" vertical="bottom">
-              <IonFabButton routerLink="/admin">
-              <IonIcon icon={returnDownBack}></IonIcon>
-          </IonFabButton>
-          </IonFab>
 
-        </IonContent>
+           <div className='main'>
+            <div className='input'>
+              <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
+                 {
+                     carers.map(carer =>
+                         <IonSelectOption value={carer["id"]}>{carer["carerEmail"]}</IonSelectOption>
+                     )
+                 }
+              </IonSelect>
+              </div>
+           
+           
+         <IonButton id="open-modal" color="secondary" expand="block">Add Carer</IonButton>
+         <IonButton expand="block" onClick={deleteCarer} color="danger" disabled={selectedCarer===''} >Delete Carer</IonButton>
+         <IonModal trigger="open-modal" initialBreakpoint={1} breakpoints={[0, 1]}>
+           <div>
+             <IonInput placeholder="Carer Email" fill='outline' className="input" onIonChange={(e:any) => setNewCarer(e.target.value)}/>
+             <IonButton onClick={createCarer}>Add!</IonButton>
+           </div>
+         </IonModal>
+         
+
+         </div>
+
+         <IonFab horizontal="start" vertical="bottom">
+               <IonFabButton routerLink="/admin">
+               <IonIcon icon={returnDownBack}></IonIcon>
+           </IonFabButton>
+           </IonFab>
+                
+
+         </IonContent>
       </IonPage>
       
     );
