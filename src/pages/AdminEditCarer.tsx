@@ -121,7 +121,7 @@ const AdminEditCarer: React.FC = () => {
           </IonTitle>
         </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent className="ion-padding">
 
            <div className='main'>
             <div className='input'>

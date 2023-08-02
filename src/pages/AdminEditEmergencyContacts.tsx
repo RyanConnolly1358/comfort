@@ -140,7 +140,7 @@ import './css/global.css';
           </IonToolbar>
 
         </IonHeader>
-        <IonContent> 
+        <IonContent className="ion-padding"> 
 
         <div className='main'>
           <div className='input'>
@@ -155,7 +155,7 @@ import './css/global.css';
           </div>
         
           <IonButton expand="block" color={"secondary"} onClick={addEmergencyContact} >Add Carer to EC</IonButton>
-          <IonButton expand="block" color={"danger"} onClick={removeEmergencyContact} >Remove Emergency Contact</IonButton>
+          <IonButton expand="block" color={"danger"} onClick={removeEmergencyContact} >Remove EC</IonButton>
           <IonLabel className='text'>Emergency Contacts: </IonLabel>
                  {emergencyContacts.map( emergencyContact =>
                     <IonLabel className='text'>{emergencyContact["email"]}</IonLabel>

@@ -5,6 +5,7 @@ import {
     IonHeader,
     IonIcon,
     IonItem,
+    IonLabel,
     IonList,
     IonPage,
     IonTitle,
@@ -39,14 +40,16 @@ import { returnDownBack } from 'ionicons/icons';
         labels:[test.getDate()-6,test.getDate()-5,test.getDate()-4,test.getDate()-3,test.getDate()-2,test.getDate()-1,test.getDate(),test.getDate()],
         datasets: [
             {
-              label: 'Mood Report',
+              label: 'Mood Rating',
               backgroundColor: 'rgba(255,99,132,0.2)',
               borderColor: 'rgba(255,99,132,1)',
               borderWidth: 2,
               hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               hoverBorderColor: 'rgba(255,99,132,1)',
               showLine: true,
-              data: [pastMoods[6],pastMoods[5],pastMoods[4],pastMoods[3],pastMoods[2],pastMoods[1],pastMoods[0]]
+              data: [pastMoods[12],pastMoods[10],pastMoods[8],pastMoods[6],pastMoods[4],pastMoods[2],pastMoods[0]]
+              //data: ["1","3","2","1","0",pastMoods[2],pastMoods[0]]
+              //data: [pastMoods.split(",")]
             }
           ]
     }
@@ -98,6 +101,7 @@ import { returnDownBack } from 'ionicons/icons';
             //console.log(pastMoods.toString());
             setPastMoods(pastMoods.toString());
             
+            
           })
         } catch(e){
             throw e;
@@ -126,12 +130,12 @@ import { returnDownBack } from 'ionicons/icons';
   
         <IonToolbar>
           <IonTitle>
-            
+            Mood Report 
           </IonTitle>
         </IonToolbar>
   
         </IonHeader>
-        <IonContent>
+        <IonContent className='ion-padding'>
           <div className='main'>
           
             <IonList max-height = "500px">
@@ -145,6 +149,11 @@ import { returnDownBack } from 'ionicons/icons';
             </IonItem>
            
           </IonList>
+          <IonLabel className='text'>Past 7 day mood ratings:<br/></IonLabel>
+          {
+              pastMoods.split(',', 7).map((test, index) => <IonLabel className='text'> {getDate(index).toLocaleDateString()}: {test}<br/></IonLabel> )
+              
+          }
 
           </div>
         

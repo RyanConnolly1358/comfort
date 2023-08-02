@@ -5,6 +5,7 @@ import {
     IonFabButton,
     IonHeader,
     IonIcon,
+    IonLabel,
     IonPage,
     IonSelect,
     IonSelectOption,
@@ -25,7 +26,7 @@ import './css/global.css';
   
     const [carers, setCarer] = useState<Carer[]>([]);
     const [selectedCarer, setSelectedCarer] = useState('');
-    const [currentCarer, setCurrentCarer] = useState<Carer[]>([]);
+    const [currentCarer, setCurrentCarer] = useState<Carer[]>([{"carerEmail":"", "id":""}]);
 
 
     function updatePrimaryCarer(){
@@ -69,8 +70,9 @@ import './css/global.css';
             
   
           }).then((res) => {
+            console.log(res.data)
             setCurrentCarer(res.data);
-            console.log(res.data[0]["carerEmail"])
+            
           })
         } catch(e){
             throw e;
@@ -119,7 +121,7 @@ import './css/global.css';
         </IonToolbar>
   
         </IonHeader>
-        <IonContent>
+        <IonContent className="ion-padding">
         <div className='main'>
           <div className='input'>
           <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
@@ -133,7 +135,7 @@ import './css/global.css';
         
         <IonButton expand="block" onClick={updatePrimaryCarer} color="secondary">Update Primary Carer</IonButton>
 
-        {/* <IonLabel className='text'>Current Primary : {currentCarer[0]["carerEmail"]}</IonLabel> */}
+        <IonLabel className='text'>Current Primary : {currentCarer[0]["carerEmail"]}</IonLabel>
 
 
         </div>
