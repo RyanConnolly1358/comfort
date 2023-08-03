@@ -115,7 +115,7 @@ import './css/global.css';
         <IonHeader>
   
         <IonToolbar>
-          <IonTitle>
+          <IonTitle title='updatePrimaryTitle'>
             Update Primary Carer
           </IonTitle>
         </IonToolbar>

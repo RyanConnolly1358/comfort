@@ -12,7 +12,6 @@ const Login: React.FC = () => {
     let history = useHistory();
 
   function login(){
-    console.log(username, password)
 
     const loginReqBody = {
       "username":username,
@@ -36,15 +35,10 @@ const Login: React.FC = () => {
         if(res.data[0]["admin"] === 0){
           localStorage.carerEmail = res.data[0]["carerEmail"];
           history.push('/hub');
-          console.log("Welcome User!");
         }else if(res.data[0]["admin"] === 1){
           localStorage.patientID = res.data[0]["patientID"];
           history.push('/admin');
-          console.log("Welcome Admin!");
         }
-
-       // console.log(res.data[0]["carerEmail"]);
-       // console.log(localStorage.carerEmail);
         
         
       }
@@ -57,17 +51,16 @@ const Login: React.FC = () => {
     <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Comfort!</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
             <div className="login">
                <IonImg src="assets/icon/logo.png" className="logo" />
                <IonLabel color={'danger'} className="title">Comfort</IonLabel>
-               <IonInput placeholder="Username" className="input" onIonChange={(e:any) => setUsername(e.target.value)}/>
-               <IonInput placeholder="Password"  className="input" onIonChange={(e:any) => setPassword(e.target.value)}/>
-               <IonButton onClick={login} color="primary" className="loginBtn">Login</IonButton>
-               <IonButton routerLink="/register" color="secondary" className="loginBtn">Register</IonButton>
+               <IonInput placeholder="Username" title="usernameInput" className="input" onIonChange={(e:any) => setUsername(e.target.value)}/>
+               <IonInput placeholder="Password" type="password" title="passwordInput" className="input" onIonChange={(e:any) => setPassword(e.target.value)}/>
+               <IonButton onClick={login} expand="block" title="loginButton" color="secondary">Login</IonButton>
+               <IonButton routerLink="/register" expand="block" title="registerButton" color="danger">Register</IonButton>
             </div>
             
         </IonContent>

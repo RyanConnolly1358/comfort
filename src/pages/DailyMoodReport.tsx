@@ -72,7 +72,7 @@ import { returnDownBack } from 'ionicons/icons';
             var pastMoods = [0,0,0,0,0,0,0]
 
             // eslint-disable-next-line array-callback-return
-            res.data.map( (test: { [x: string]: any; }) => {
+            res.data.map( (mood: { [x: string]: any; }) => {
 
                 //Past 7 Days
                 let past7Days = [];
@@ -80,18 +80,18 @@ import { returnDownBack } from 'ionicons/icons';
                   past7Days.push(getDate(i))
                 }
                 
-                const date: Date = new Date(test["_ts"] * 1000);
+                const date: Date = new Date(mood["_ts"] * 1000);
                 let t = date.toLocaleDateString();
                 console.log(t);
 
                 switch(t){
-                    case past7Days[0].toLocaleDateString(): { pastMoods[0] = test["moodRating"]; break;}
-                    case past7Days[1].toLocaleDateString(): { pastMoods[1] = test["moodRating"]; break;}
-                    case past7Days[2].toLocaleDateString(): { pastMoods[2] = test["moodRating"]; break;}
-                    case past7Days[3].toLocaleDateString(): { pastMoods[3] = test["moodRating"]; break;}
-                    case past7Days[4].toLocaleDateString(): { pastMoods[4] = test["moodRating"]; break;}
-                    case past7Days[5].toLocaleDateString(): { pastMoods[5] = test["moodRating"]; break;}
-                    case past7Days[6].toLocaleDateString(): { pastMoods[6] = test["moodRating"]; break;}
+                    case past7Days[0].toLocaleDateString(): { pastMoods[0] = mood["moodRating"]; break;}
+                    case past7Days[1].toLocaleDateString(): { pastMoods[1] = mood["moodRating"]; break;}
+                    case past7Days[2].toLocaleDateString(): { pastMoods[2] = mood["moodRating"]; break;}
+                    case past7Days[3].toLocaleDateString(): { pastMoods[3] = mood["moodRating"]; break;}
+                    case past7Days[4].toLocaleDateString(): { pastMoods[4] = mood["moodRating"]; break;}
+                    case past7Days[5].toLocaleDateString(): { pastMoods[5] = mood["moodRating"]; break;}
+                    case past7Days[6].toLocaleDateString(): { pastMoods[6] = mood["moodRating"]; break;}
 
                 }
             }
@@ -135,7 +135,7 @@ import { returnDownBack } from 'ionicons/icons';
         </IonToolbar>
   
         </IonHeader>
-        <IonContent className='ion-padding'>
+        <IonContent className='ion-padding'> 
           <div className='main'>
           
             <IonList max-height = "500px">
@@ -151,7 +151,7 @@ import { returnDownBack } from 'ionicons/icons';
           </IonList>
           <IonLabel className='text'>Past 7 day mood ratings:<br/></IonLabel>
           {
-              pastMoods.split(',', 7).map((test, index) => <IonLabel className='text'> {getDate(index).toLocaleDateString()}: {test}<br/></IonLabel> )
+              pastMoods.split(',', 7).map((test, index) => <IonLabel className='text'> {getDate(index).toLocaleDateString()}: {test}<br/></IonLabel> )    
               
           }
 

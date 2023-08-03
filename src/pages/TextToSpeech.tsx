@@ -30,7 +30,7 @@ const TextToSpeech: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Speak!</IonTitle>
+          <IonTitle title="speakTitle">Speak!</IonTitle>
         </IonToolbar>
       </IonHeader>
 
