@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonImg, IonInput, IonLabel, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonContent, IonHeader, IonImg, IonInput, IonLabel, IonPage, IonToolbar } from "@ionic/react";
 import { useState } from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
