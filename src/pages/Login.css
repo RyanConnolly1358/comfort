@@ -3,10 +3,10 @@
     margin: 0 auto;
     background-color: #FBFBFB;
     border-radius: 1%;
-    padding: 10% 10%;
+    padding: 20% 10%;
     box-shadow: 0px 0px 8px #888888;
     text-align: left;
-    position: relative;
+    
   }
 
 
@@ -16,12 +16,6 @@
     justify-content: center;
     border-radius: 5px;
     padding: 10px 0px;
-}
-
-.logo{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
 }
 
 .input{
@@ -39,5 +33,5 @@
     justify-content: center;
     color: #030303;
     padding: 10px;
-    font-size: 5.0vw;
+    font-size: 6.0vw;
 }

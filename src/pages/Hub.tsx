@@ -12,6 +12,7 @@ import {
     IonToolbar,
   } from '@ionic/react';
 import axios from 'axios';
+import './css/Hub.css'
   import {chevronForward, logOut, lockClosed} from "ionicons/icons";
   
   const Hub: React.FC = () => {
@@ -48,11 +49,11 @@ import axios from 'axios';
         </IonHeader>
 
         <IonContent>
-            <IonImg src="assets/icon/logo.png" className="logo" />
-            <IonButton expand="block" size="large" title='dailyMoodButton' routerLink="/mood">Daily Mood Check</IonButton>
-            <IonButton expand="block" size="large" title="emailCarerButton" routerLink="/email">Email Carer</IonButton>
-            <IonButton expand="block" size="large" title="textToSpeechButton" routerLink='/speak'>Text to Speech</IonButton>
-            <IonButton expand="block" size="large" title="emergencyAlertButton" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
+            <IonImg src="assets/icon/logo.png" className="hubLogo" />
+            <IonButton className="hubButton" expand="block" size="large" title='dailyMoodButton' routerLink="/mood">Daily Mood Check</IonButton>
+            <IonButton className="hubButton" expand="block" size="large" title="emailCarerButton" routerLink="/email">Email Carer</IonButton>
+            <IonButton className="hubButton" expand="block" size="large" title="textToSpeechButton" routerLink='/speak'>Text to Speech</IonButton>
+            <IonButton className="hubButton" expand="block" size="large" title="emergencyAlertButton" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
 
             <IonFab horizontal="start" vertical="bottom">
               <IonFabButton>

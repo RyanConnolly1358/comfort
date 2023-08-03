@@ -29,7 +29,7 @@ import './css/global.css';
     }
 
     const [carers, setCarer] = useState<Carer[]>([]);
-    const [emergencyContacts, setCurrentEmergencyContacts] = useState<EmergencyContact[]>([]);
+    const [emergencyContacts, setCurrentEmergencyContacts] = useState<EmergencyContact[]>([{'email':""}]);
     const [selectedCarer, setSelectedCarer] = useState('');
 
     function getCarers(){
@@ -158,7 +158,7 @@ import './css/global.css';
           <IonButton expand="block" color={"danger"} onClick={removeEmergencyContact} >Remove EC</IonButton>
           <IonLabel className='text'>Emergency Contacts: </IonLabel>
                  {emergencyContacts.map( emergencyContact =>
-                    <IonLabel className='text'>{emergencyContact["email"]}</IonLabel>
+                    <IonLabel className='text'>{emergencyContact["email"]+" "}</IonLabel>
                  )}
         </div>
           

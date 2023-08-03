@@ -52,7 +52,7 @@ const TextToSpeech: React.FC = () => {
           onIonChange={(e: any) => setTextToBeConverted(e.target.value)}
           />
 
-          <div>
+          <div className="button">
           <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Hello")} color="secondary">Hello</IonButton>
           <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Bye")} color="secondary">Bye</IonButton>
           <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Help")} color="secondary">Help</IonButton>
@@ -63,13 +63,13 @@ const TextToSpeech: React.FC = () => {
           <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Maybe")} color="secondary">Maybe</IonButton>
           </div>
           <div>
-          <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Water")} color="secondary">Water</IonButton>
+          <IonButton className="button"  title="speakButton"  onClick={() => buttonToSpeech("Water")} color="secondary">Water</IonButton>
           <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Food")} color="secondary">Food</IonButton>
-          <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Toilet")} color="secondary">Toliet</IonButton>
+          <IonButton  title="speakButton"  onClick={() => buttonToSpeech("Toilet")} color="secondary">Toilet</IonButton>
           </div>
           
 
-          <IonButton  title="speakButton" expand="block" onClick={convertTextToSpeech} color="tertiary">
+          <IonButton  className="speak" title="speakButton" expand="block" onClick={convertTextToSpeech} color="tertiary">
             Speak!
           </IonButton>
           

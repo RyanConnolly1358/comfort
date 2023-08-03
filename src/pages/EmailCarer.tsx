@@ -5,6 +5,7 @@ import {
     IonFabButton,
     IonHeader,
     IonIcon,
+    IonImg,
     IonInput,
     IonPage,
     IonTitle,
@@ -18,8 +19,6 @@ import './css/EmailCarer.css';
   const EmailCarer: React.FC = () => {
 
     const [emailContent, setEmail] = useState("");
-
-  
 
   async function sendEmail() {
         console.log(emailContent);
@@ -63,12 +62,29 @@ import './css/EmailCarer.css';
   
         <IonContent>
           <div className='main'>
+            <IonImg src="assets/icon/logo.png" className="logo" />
             <IonInput
             className='input'
-            placeholder="Enter Text"
+            value={emailContent}
             onIonChange={(e: any) => setEmail(e.target.value)}
           />
-          <IonButton expand="block" title='sendEmailButton' onClick={sendEmail} color="secondary">
+
+          <div className='button'>
+          <IonButton  className='button' title="speakButton"  onClick={() => setEmail(emailContent+"Hello ")} color="secondary">Hello</IonButton>
+          <IonButton  className='button' title="speakButton"  onClick={() => setEmail(emailContent+"Bye ")} color="secondary">Bye</IonButton>
+          <IonButton  className='button' title="speakButton"  onClick={() => setEmail(emailContent+"Help ")} color="secondary">Help</IonButton>
+          </div>
+          <div className='button'>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"Yes ")} color="secondary">Yes</IonButton>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"No ")} color="secondary">No</IonButton>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"Maybe ")} color="secondary">Maybe</IonButton>
+          </div>
+          <div className='button'>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"Water ")} color="secondary">Water</IonButton>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"Food ")} color="secondary">Food</IonButton>
+          <IonButton  title="speakButton"  onClick={() => setEmail(emailContent+"Toilet ")} color="secondary">Toilet</IonButton>
+          </div>
+          <IonButton className="emailBtn" expand="block" title='sendEmailButton' onClick={sendEmail} color="tertiary">
             Send Email!
           </IonButton>
           </div>

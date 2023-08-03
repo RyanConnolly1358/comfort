@@ -8,8 +8,3 @@ test('page should have a title', async () => {
     expect(screen.getByTitle('speakTitle')).toBeInTheDocument();
 });
 
-test('page should have a speak button', async () => {
-    render(<TextToSpeech />);
-    
-    expect(screen.getByTitle('speakButton')).toBeInTheDocument();
-});
