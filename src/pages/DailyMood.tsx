@@ -51,11 +51,11 @@ import axios from 'axios';
         </IonHeader>
         <IonContent>
             <div className="main">
-                <IonImg src="assets/icon/mood5.png" className="image" onClick={() => submitMood("5")} />
-                <IonImg src="assets/icon/mood4.png" className="image" onClick={() => submitMood("4")}/>
-                <IonImg src="assets/icon/mood3.png" className="image" onClick={() => submitMood("3")}/>
-                <IonImg src="assets/icon/mood2.png" className="image" onClick={() => submitMood("2")}/>
-                <IonImg src="assets/icon/mood1.png" className="image" onClick={() => submitMood("1")} />
+                <IonImg src="assets/icon/mood5.png" title="moodRatingImg5" className="image" onClick={() => submitMood("5")} />
+                <IonImg src="assets/icon/mood4.png" title="moodRatingImg4" className="image" onClick={() => submitMood("4")}/>
+                <IonImg src="assets/icon/mood3.png" title="moodRatingImg3" className="image" onClick={() => submitMood("3")}/>
+                <IonImg src="assets/icon/mood2.png" title="moodRatingImg2" className="image" onClick={() => submitMood("2")}/>
+                <IonImg src="assets/icon/mood1.png" title="moodRatingImg1" className="image" onClick={() => submitMood("1")} />
             </div>
         
         <IonFab horizontal="start" vertical="bottom">

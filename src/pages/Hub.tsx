@@ -49,10 +49,10 @@ import axios from 'axios';
 
         <IonContent>
             <IonImg src="assets/icon/logo.png" className="logo" />
-            <IonButton expand="block" size="large" routerLink="/mood">Daily Mood Check</IonButton>
-            <IonButton expand="block" size="large" routerLink="/email">Email Carer</IonButton>
-            <IonButton expand="block" size="large" routerLink='/speak'>Text to Speech</IonButton>
-            <IonButton expand="block" size="large" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
+            <IonButton expand="block" size="large" title='dailyMoodButton' routerLink="/mood">Daily Mood Check</IonButton>
+            <IonButton expand="block" size="large" title="emailCarerButton" routerLink="/email">Email Carer</IonButton>
+            <IonButton expand="block" size="large" title="textToSpeechButton" routerLink='/speak'>Text to Speech</IonButton>
+            <IonButton expand="block" size="large" title="emergencyAlertButton" color="danger" onClick={sendEmergencyAlert} >Emergency Alert</IonButton>
 
             <IonFab horizontal="start" vertical="bottom">
               <IonFabButton>

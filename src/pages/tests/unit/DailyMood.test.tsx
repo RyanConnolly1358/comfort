@@ -7,3 +7,13 @@ test('page should have a title of Daily Mood Check!', async () => {
     await screen.findByText('Daily Mood Check!');
     
 });
+
+test('page should have a 5 mood images', async () => {
+    render(<DailyMood />);
+    expect(screen.getByTitle("moodRatingImg5")).toBeInTheDocument();
+    expect(screen.getByTitle("moodRatingImg4")).toBeInTheDocument();
+    expect(screen.getByTitle("moodRatingImg3")).toBeInTheDocument();
+    expect(screen.getByTitle("moodRatingImg2")).toBeInTheDocument();
+    expect(screen.getByTitle("moodRatingImg1")).toBeInTheDocument();
+    
+});

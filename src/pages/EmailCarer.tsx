@@ -68,7 +68,7 @@ import './css/EmailCarer.css';
             placeholder="Enter Text"
             onIonChange={(e: any) => setEmail(e.target.value)}
           />
-          <IonButton onClick={sendEmail} color="primary">
+          <IonButton expand="block" title='sendEmailButton' onClick={sendEmail} color="secondary">
             Send Email!
           </IonButton>
           </div>

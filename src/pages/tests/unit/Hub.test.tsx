@@ -7,3 +7,11 @@ test('page should have a title of Comfort', async () => {
     await screen.findByText('Comfort - Welcome user!');
     
 });
+
+test('page should render all buttons', async () => {
+    render(<Hub />);
+    expect(screen.getByTitle("dailyMoodButton")).toBeInTheDocument();
+    expect(screen.getByTitle("emailCarerButton")).toBeInTheDocument();
+    expect(screen.getByTitle("textToSpeechButton")).toBeInTheDocument();
+    expect(screen.getByTitle("emergencyAlertButton")).toBeInTheDocument();
+});

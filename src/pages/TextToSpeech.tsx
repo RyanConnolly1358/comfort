@@ -41,7 +41,7 @@ const TextToSpeech: React.FC = () => {
           placeholder="Enter Text"
           onIonChange={(e: any) => setTextToBeConverted(e.target.value)}
           />
-          <IonButton onClick={convertTextToSpeech} color="primary">
+          <IonButton  title="speakButton" expand="block" onClick={convertTextToSpeech} color="secondary">
             Speak!
           </IonButton>
           
