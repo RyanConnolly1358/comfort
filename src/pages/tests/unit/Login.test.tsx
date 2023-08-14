@@ -45,8 +45,6 @@ describe("GIVEN a login screen", () => {
     const usernameLabel = await screen.findByTitle("usernameInput");
     const passwordLabel = await screen.findByTitle("passwordInput");
 
-    //const resp = {data: [{"username":"test", "admin":"0","id":"99999"}]};
-    //const resp = { username: "xxx@xxx.com", password: "xxxxx", then: (callback) => {callback()} };
     const resp = { username: "xxx@xxx.com", password: "xxxxx", then: () => {} };
     mockedPost.mockReturnValue(resp);
 

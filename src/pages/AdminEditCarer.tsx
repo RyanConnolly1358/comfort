@@ -125,7 +125,7 @@ const AdminEditCarer: React.FC = () => {
 
            <div className='main'>
             <div className='input'>
-              <IonSelect label="Select a carer!" labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
+              <IonSelect label="Select a carer!"  labelPlacement="floating" fill="outline" onIonChange={e=>setSelectedCarer(e.target.value)}>
                  {
                      carers.map(carer =>
                          <IonSelectOption value={carer["id"]}>{carer["carerEmail"]}</IonSelectOption>
